@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+
+
+{% block content %}
+
+<div class="row col-sm-8 col-sm-offset-2">
+    <h1 class="text-center">{{ COPY.content.project_name }}</h1>
+    <p class="text-center byline">by {{ COPY.content.byline }} | published {{ COPY.content.pubdate }}<p>
+    <p class="text-center subhed">{{ COPY.content.subhed }}</p>
+</div>
+<div class="row col-xs-12">
+    <img class="baseball center-block" src="assets/noun_baseball.svg"/>
+</div>
+<div class="row main">
+{% for row in COPY.items%}
+    <div class="text-block col-sm-12 {% if row.class %}{{row.class}}{% endif %}" {% if row.id %}id="{{row.id}}"{% endif %}>
+        {{row.text}}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

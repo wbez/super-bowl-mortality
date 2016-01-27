@@ -1,0 +1,31 @@
+franchID,franchName,shortName,pop,text,years_since
+ANA,Los Angeles Angels of Anaheim,Angels,"270,000,000","<p>That's not too bad. The Los Angeles Angels of Anaheim last won the World Series in 2002, 13 years ago. That means 270,000,000 people were alive when the Angels won.</p>",13
+ARI,Arizona Diamondbacks,Diamondbacks,"266,000,000","<p>That's not too bad. The Arizona Diamondbacks last won the World Series in 2001, 14 years ago. That means 266,000,000 people were alive when the Diamondbacks won.</p>",14
+ATL,Atlanta Braves,Braves,"241,000,000","<p>The Atlanta Braves won the World Series back in 1995, 20 years ago. That means 241,000,000 people alive when the Braves won.</p>",20
+BAL,Baltimore Orioles,Orioles,"187,600,000","<p>The Baltimore Orioles haven't won since 1983, 32 years ago. That means 187,600,000 people still alive were there when the Orioles won. Could be worse.</p>",32
+BOS,Boston Red Sox,Red Sox,"315,000,000","<p>Well, aren't you lucky! The Boston Red Sox have won as recently as 2013, only 2 years ago. That means 315,000,000 people were alive when the Red Sox won.</p>",2
+CHC,Chicago Cubs,Cubs,"72,000","<p>Goats! The Chicago Cubs last won in 1908, 107 years ago. That means, at most, only 72,000 people alive when the Cubs won. (<a href='#method'>See this for why that estimate is too high.</a>) And, half of them die every year.</p>",107
+CHW,Chicago White Sox,White Sox,"283,000,000","<p>That's not too bad. The Chicago White Sox last won the World Series in 2005, 10 years ago. That means 283,000,000 people were alive when the White Sox won.</p>",10
+CIN,Cincinnati Reds,Reds,"218,500,000","<p>The Cincinnati Reds won the World Series back in 1990, 25 years ago. That means 218,500,000 people alive when the Reds won.</p>",25
+CLE,Cleveland Indians,Indians,"42,859,000","<p>Does this count as a curse? The Cleveland Indians haven't won since 1948, 67 years ago. That means 42,859,000 people still alive were there when they won. Better get a move on it!</p>",67
+COL,Colorado Rockies,Rockies,0,"<p>That's embarrassing. The Colorado Rockies have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+DET,Detroit Tigers,Tigers,"191,800,000","<p>The Detroit Tigers haven't won since 1984, 31 years ago. That means 191,800,000 people still alive were there when the Tigers won. Could be worse.</p>",31
+FLA,Miami Marlins,Marlins,"274,000,000","<p>That's not too bad. The Miami Marlins last won the World Series in 2003, 12 years ago. That means 274,000,000 people were alive when the Marlins won.</p>",12
+HOU,Houston Astros,Astros,0,"<p>That's embarrassing. The Houston Astros have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+KCR,Kansas City Royals,Royals,"196,200,000","<p>The Kansas City Royals haven't won since 1985, 30 years ago. That means 196,200,000 people still alive were there when the Royals won. Could be worse.</p>",30
+LAD,Los Angeles Dodgers,Dodgers,"209,300,000","<p>The Los Angeles Dodgers won the World Series back in 1988, 27 years ago. That means 209,300,000 people alive when the Dodgers won.</p>",27
+MIL,Milwaukee Brewers,Brewers,0,"<p>That's embarrassing. The Milwaukee Brewers have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+MIN,Minnesota Twins,Twins,"223,200,000","<p>The Minnesota Twins won the World Series back in 1991, 24 years ago. That means 223,200,000 people alive when the Twins won.</p>",24
+NYM,New York Mets,Mets,"200,600,000","<p>The New York Mets haven't won since 1986, 29 years ago. That means 200,600,000 people still alive were there when the Mets won. Could be worse.</p>",29
+NYY,New York Yankees,Yankees,"299,000,000","<p>Well, aren't you lucky! The New York Yankees have won as recently as 2009, only 6 years ago. That means 299,000,000 people were alive when the Yankees won.</p>",6
+OAK,Oakland Athletics,A's,"213,800,000","<p>The Oakland Athletics won the World Series back in 1989, 26 years ago. That means 213,800,000 people alive when the A's won.</p>",26
+PHI,Philadelphia Phillies,Phillies,"295,000,000","<p>Well, aren't you lucky! The Philadelphia Phillies have won as recently as 2008, only 7 years ago. That means 295,000,000 people were alive when the Phillies won.</p>",7
+PIT,Pittsburgh Pirates,Pirates,"170,300,000","<p>The Pittsburgh Pirates haven't won since 1979, 36 years ago. That means 170,300,000 people still alive were there when the Pirates won. Could be worse.</p>",36
+SDP,San Diego Padres,Padres,0,"<p>That's embarrassing. The San Diego Padres have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+SEA,Seattle Mariners,Mariners,0,"<p>That's embarrassing. The Seattle Mariners have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+SFG,San Francisco Giants,Giants,"319,000,000","<p>Well, aren't you lucky! The San Francisco Giants have won as recently as 2014, only 1 year ago. That means 319,000,000 people were alive when the Giants won.</p>",1
+STL,St. Louis Cardinals,Cardinals,"307,000,000","<p>Well, aren't you lucky! The St. Louis Cardinals have won as recently as 2011, only 4 years ago. That means 307,000,000 people were alive when the Cardinals won.</p>",4
+TBD,Tampa Bay Rays,Rays,0,"<p>That's embarrassing. The Tampa Bay Rays have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+TEX,Texas Rangers,Rangers,0,"<p>That's embarrassing. The Texas Rangers have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
+TOR,Toronto Blue Jays,Blue Jays,"232,300,000","<p>The Toronto Blue Jays won the World Series back in 1993, 22 years ago. That means 232,300,000 people alive when the Blue Jays won.</p>",22
+WSN,Washington Nationals,Nationals,0,"<p>That's embarrassing. The Washington Nationals have never won a World Series, which means no one alive (or dead) has ever seen it.</p>",9999
