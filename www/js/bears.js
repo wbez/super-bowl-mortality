@@ -1,6 +1,6 @@
 // Configuration
-var GRAPHIC_ID = '#cubs';
-var GRAPHIC_DATA_URL = 'cubs.csv';
+var GRAPHIC_ID = '#bears';
+var GRAPHIC_DATA_URL = 'bears.csv';
 var GRAPHIC_DEFAULT_WIDTH = 600;
 var MOBILE_THRESHOLD = 540;
 
@@ -84,7 +84,7 @@ var drawGraph = function(graphicWidth, id, data) {
     var graph = d3.select(id);
 
     var color = d3.scale.ordinal()
-        .range([ '#003279' ]);
+        .range([ '##0B162A' ]);
 
     // Desktop / default
     var aspectWidth = 16;

@@ -1,7 +1,7 @@
 // Configuration
 var GRAPHIC_ID = '#graphic';
-var GRAPHIC_DATA_URL = 'world_series_data_transpose.csv';
-var LEGEND_DATA_URL = 'franchise_info.csv';
+var GRAPHIC_DATA_URL = 'super_bowl_data_transpose_2015.csv';
+var LEGEND_DATA_URL = 'franchise_info_2015.csv';
 var GRAPHIC_DEFAULT_WIDTH = 600;
 var MOBILE_THRESHOLD = 540;
 
@@ -82,8 +82,7 @@ var render = function(containerWidth) {
     // Clear out existing graphic (for re-drawing)
     $graphic.empty();
 
-    drawGraph(containerWidth, GRAPHIC_ID, graphicData);
-    console.log(containerWidth)
+    drawGraph(containerWidth, GRAPHIC_ID, graphicData, setGraphSelection);
 
     // Resize iframe to fit
     if (pymChild) {
@@ -95,14 +94,20 @@ $( window ).resize(function(){
     render();
 })
 
+var setGraphSelection = function(){
+    console.log('trigger')
+    var event = new Event('change');
+    document.getElementById("teams").dispatchEvent(event);
+}
+
 /*
  * DRAW THE GRAPH
  */
-var drawGraph = function(graphicWidth, id, data) {
+var drawGraph = function(graphicWidth, id, data, callback) {
     var graph = d3.select(id);
 
     var color = d3.scale.ordinal()
-        .range(['#B71234','#A71930','#002F5F','#ED4C09','#C60C30','#003279','#000000','#C6011F','#003366','#333366','#001742','#F9423A','#FF7F00','#74B4FA','#083C6B','#92754C','#072754','#FB4F14','#1C2841','#003831','#BA0C2F','#FDB829','#B4A76C','#005C5C','#F2552C','#C41E3A','#9ECEEE','#003279','#003DA5','#BA122B']);
+        .range(['#97233F','#A71930','#241773','#00338D','#0085CA','#0B162A','#FB4F14','#FB4F14','#ACC0C6','#FB4F14','#005A8B','#203731','#03202F','#002C5F','#006778','#FFB612','#008E97','#4F2683','#002244','#9F8958','#0B2265','#203731','#A5ACAF','#004953','#FFB612','#FFB612','#AA0000','#69BE28','#002244','#D50A0A','#4B92DB','#773141']);
 
     // Desktop / default
     var aspectWidth = 16;
@@ -245,7 +250,13 @@ var drawGraph = function(graphicWidth, id, data) {
         .enter()
         .append('path')
             .attr('class', function(d, i) {
-                return 'area area-' + i + ' ' + classify(d['key']);
+                var n = '';
+                if (d['key'] == '49ers'){
+                    n = 'niners'
+                } else {
+                    n = classify(d['key'])
+                }
+                return 'area area-' + i + ' ' + n;
             })
             .attr("d", function(d) {
                 return area(d['value']);
@@ -261,7 +272,13 @@ var drawGraph = function(graphicWidth, id, data) {
         .enter()
         .append('path')
             .attr('class', function(d, i) {
-                return 'line line-' + i + ' ' + classify(d['key']);
+                var n = '';
+                if (d['key'] == '49ers'){
+                    n = 'niners'
+                } else {
+                    n = classify(d['key'])
+                }
+                return 'line line-' + i + ' ' + n;
             })
             .attr('stroke', function(d) {
                 return color(d['key']);
@@ -272,25 +289,35 @@ var drawGraph = function(graphicWidth, id, data) {
             })
             .style("stroke-opacity", 0.1)
             .on("click",function(d,i){
-              lines = d3.selectAll('.line')
-              lines.transition().style("stroke-opacity", 0.1)
-              var area = d3.selectAll('.area')
-              area.transition().style("opacity", 0.1)
-              var sel = d3.select(this);
-              sel.moveToFront();
-              sel.transition().style("stroke-opacity", 1)
-              var area = d3.selectAll('.area').filter('.'+classify(d['key']))
-              area.transition().style("opacity", 0.75)
-              area.moveToFront()
-              var select = d3.selectAll(".option").filter('.'+classify(d['key']))
-              select.attr('selected','selected');
+                var n = '';
+                if (d['key'] == '49ers'){
+                    n = 'niners'
+                } else {
+                    n = classify(d['key'])
+                }
+                lines = d3.selectAll('.line')
+                lines.transition().style("stroke-opacity", 0.1)
+                var area = d3.selectAll('.area')
+                area.transition().style("opacity", 0.1)
+                var sel = d3.select(this);
+                sel.moveToFront();
+                sel.transition().style("stroke-opacity", 1)
+                var area = d3.selectAll('.area').filter('.'+n)
+                area.transition().style("opacity", 0.75)
+                area.moveToFront()
+                var select = d3.selectAll(".option").filter('.'+n)
+                select.attr('selected','selected');
 
                 // replace text
                 team_text.html(function(){
-                    var select = d3.selectAll('.option').filter('.'+classify(d['key']))
+                    var select = d3.selectAll('.option').filter('.'+n)
                     console.log(select.attr('data-text'))
                     return select.attr('data-text')
                 })  
+
+                // reset select
+                select.selectAll("option")
+                    .property("selected", function(d){ return d.team_short === n; });
             });
             // .on("mouseout",function(d,i){
             //   var sel = d3.select(this);
@@ -309,15 +336,30 @@ var drawGraph = function(graphicWidth, id, data) {
       .data(legendData)
       .enter()
         .append("option")
-        .sort(function(a, b) {return d3.ascending(a.franchName, b.franchName);})
-        .attr("value", function (d) { return d.franchID; })
-        .text(function (d) { return d.franchName;} )
+        .sort(function(a, b) {return d3.ascending(a.team, b.team);})
+        .attr("value", function (d) { 
+            var n = '';
+            if (d.team_short == '49ers'){
+                n = 'niners'
+            } else {
+                n = classify(d.team_short)
+            }
+            return n; 
+        })
+        .text(function (d) { return d.team;} )
         .attr('class', function(d, i) {
-            return 'option option-' + (i+1) + ' ' + classify(d.franchID);
+            var n = '';
+            if (d.team_short == '49ers'){
+                n = 'niners'
+            } else {
+                n = classify(d.team_short)
+            }
+            return 'option option-' + (i+1) + ' ' + n;
         })
         .attr('data-text', function(d, i) {
             return d['text'];
-        });
+        })
+        .property("selected", function(d){ return d.team_short === 'Bears'; });
 
     select
         .on('change', function() {
@@ -325,6 +367,9 @@ var drawGraph = function(graphicWidth, id, data) {
             selected = d3.select(this).property('value');
             console.log(selected)
             team = classify(selected)
+            if (team == '49ers') {
+                team = 'niners';
+            }
             lines = d3.selectAll('.line')
             lines.transition().style("stroke-opacity", 0.1)
             var area = d3.selectAll('.area')
@@ -340,11 +385,16 @@ var drawGraph = function(graphicWidth, id, data) {
 
             // replace text
             team_text.html(function(){
-                var select = d3.selectAll('.option').filter('.'+classify(selected))
+                var select = d3.selectAll('.option').filter('.'+team)
                 console.log(select.attr('data-text'))
                 return select.attr('data-text')
             })  
         });
+
+    callback()
+
+
+    
 }
 
 /*

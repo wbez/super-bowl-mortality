@@ -8,11 +8,11 @@
     <p class="text-center byline">by {{ COPY.content.byline }} | published {{ COPY.content.pubdate }}<p>
     <p class="text-center subhed">{{ COPY.content.subhed }}</p>
 </div>
-<div class="row col-xs-12">
-    <img class="baseball center-block" src="assets/noun_baseball.svg"/>
+<div class="row col-sm-8 col-sm-offset-2">
+    <img class="baseball center-block" src="assets/noun_football.svg"/>
 </div>
-<div class="row main">
-{% for row in COPY.items%}
+<div class="row main col-sm-8 col-sm-offset-2">
+{% for row in COPY.items2017 %}
     <div class="text-block col-sm-12 {% if row.class %}{{row.class}}{% endif %}" {% if row.id %}id="{{row.id}}"{% endif %}>
         {{row.text}}
     </div>

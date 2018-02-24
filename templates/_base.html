@@ -18,7 +18,7 @@
     <!-- {{ CSS.push('less/base.less') }} -->
     <!-- {{ CSS.push('less/graphic.less') }} -->
     {% block extra_css %}
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Lora|Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Lora|Roboto+Condensed|Roboto' rel='stylesheet' type='text/css'>
     {% endblock extra_css %}
     {{ CSS.render('css/app.min.css') }}
 
@@ -28,6 +28,24 @@
     {% endblock extra_head %}
 </head>
 <body>
+    <script>
+    dataLayer = [];
+    </script>
+
+    <!-- WBEZ Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-57WD36&gtm_auth=tmHQZJnpm8lhBlUlUxcf9A&gtm_preview=env-1&gtm_cookies_win=x"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_auth=tmHQZJnpm8lhBlUlUxcf9A&gtm_preview=env-1&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-57WD36');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+    dataLayer.push({'dL_pageType': 'interactive'});
+    </script>
+    
     <!-- ANALYTICS JAVASCRIPT -->
     {{ JS.push('js/app_config.js') }}
     {{ JS.push('js/analytics.js') }}
@@ -77,7 +95,7 @@
             </ul>
         </div>
         <div class="secondary">
-            <p>&copy;2015 WBEZ</p>
+            <p>&copy;2017 WBEZ</p>
             <ul>
                 <li id="footerContact"><a href="http://www.wbez.org/contact">Contact</a></li>
                 <li id="footerContact"><a href="https://www.chicagopublicmedia.org/page/privacy-policy">Privacy Policy</a></li>
@@ -92,6 +110,7 @@
 
     {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.js"></script>
     {{ JS.push('js/lib/jquery.js') }}
     {{ JS.push('js/lib/underscore.js') }}
     {{ JS.push('js/lib/modernizr.js') }}
@@ -103,7 +122,6 @@
     {{ JS.push('js/comments.js') }}
     {{ JS.push('js/share.js') }}
     {{ JS.push('js/app.js') }}
-    {{ JS.push('js/lib/pym.js') }}
     {{ JS.push('js/base.js') }}
     {{ JS.push('js/graphic.js') }}
     {% block extra_foot_js %}{% endblock extra_foot_js %}
@@ -120,11 +138,20 @@
     <script type=""text/javascript"">
     $(function() {
         var pymParent = new pym.Parent(
-            'responsive-embed-cubs',
-            'http://s3.amazonaws.com/wbez-dailygraphics/dailygraphics/graphics/cubs/child.html',
+            'responsive-embed-bears',
+            'https://s3.amazonaws.com/wbez-dailygraphics/dailygraphics/graphics/bears/child.html',
             {}
         );
     });
+
+    $(function() {
+        var pymParent = new pym.Parent(
+            'responsive-embed-teams',
+            'https://s3.amazonaws.com/wbez-dailygraphics/dailygraphics/graphics/super_bowl_year/child.html',
+            {}
+        );
+    });
+
     </script>
 </body>
 </html>

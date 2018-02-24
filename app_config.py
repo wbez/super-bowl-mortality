@@ -25,14 +25,14 @@ PROJECT_SLUG = 'super-bowl-mortality'
 PROJECT_FILENAME = 'super_bowl_lifespan'
 
 # The name of the repository containing the source
-REPOSITORY_NAME = 'super-bowl-lifespan'
+REPOSITORY_NAME = 'super-bowl-mortality'
 GITHUB_USERNAME = 'wbez'
 REPOSITORY_URL = 'git@github.com:%s/%s.git' % (GITHUB_USERNAME, REPOSITORY_NAME)
 REPOSITORY_ALT_URL = None # 'git@bitbucket.org:nprapps/%s.git' % REPOSITORY_NAME'
 
 # Project name used for assets rig
 # Should stay the same, even if PROJECT_SLUG changes
-ASSETS_SLUG = 'super-bowl-lifespan'
+ASSETS_SLUG = 'super-bowl-mortality'
 
 """
 DEPLOYMENT
@@ -97,13 +97,13 @@ DEBUG = True
 """
 COPY EDITING
 """
-COPY_GOOGLE_DOC_KEY = '1E4804Q42S7SFOBIOQIwXz_4Ewwgq7M-KHGXknQ6KKtU'
+COPY_GOOGLE_DOC_KEY = '1ppcyaTJBCSf2QZBVY_QnEeWPF42z4vh3hBlt8ys_zbw'
 COPY_PATH = 'data/copy.xlsx'
 
 """
 SHARING
 """
-SHARE_URL = 'http://interactive.wbez.org/worldseriesmortality'
+SHARE_URL = 'http://interactive.wbez.org/superbowlmortality'
 
 """
 SERVICES
